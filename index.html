@@ -2,9 +2,235 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Online Planner</title>
+    <title>Online Weekly Planner</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Agenda</h1>
+
+<div id="menu-bar">
+    <menu class="menu-button">File</menu>
+    <menu class="menu-button">Add</menu>
+    <menu class="menu-button">Theme</menu>
+    <div id="date">Today is Sunday 1/1</div>
+    <div id="title">Your Weekly Planner</div>
+</div>
+
+<div id="main">
+    <div class="sidebar">
+        <div class="task-list">
+            <div id="task-title">Tasks</div>
+        </div>
+        <textarea id="textbox"></textarea>
+    </div>
+
+    <div class="week-view">
+
+        <div class="day" id="sunday">
+            <div class="top-text">
+                <div class="day-name">Sunday</div>
+            </div>
+            <div class="top-divider"></div>
+            <div class="daily">
+                <div class="event-box">
+                    <div class="event-label">Events</div>
+                    <ul class="event-list">
+                        <li>list</li>
+                        <li>of</li>
+                        <li>events</li>
+                    </ul>
+                </div>
+                <div class="middle-divider"></div>
+                <div class="task-box">
+                    <div class="task-label">Tasks</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>tasks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-quick-notes">
+                <textarea class="quick-notes"></textarea>
+            </div>
+        </div>
+
+        <div class="day" id="monday">
+            <div class="top-text">
+                <div class="day-name">Monday</div>
+            </div>
+            <div class="top-divider"></div>
+            <div class="daily">
+                <div class="event-box">
+                    <div class="event-label">Events</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>events</li>
+                    </ul>
+                </div>
+                <div class="middle-divider"></div>
+                <div class="task-box">
+                    <div class="task-label">Tasks</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>tasks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-quick-notes">
+                <textarea class="quick-notes"></textarea>
+            </div>
+        </div>
+
+        <div class="day" id="tuesday">
+            <div class="top-text">
+                <div class="day-name">Tuesday</div>
+            </div>
+            <div class="top-divider"></div>
+            <div class="daily">
+                <div class="event-box">
+                    <div class="event-label">Events</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>events</li>
+                    </ul>
+                </div>
+                <div class="middle-divider"></div>
+                <div class="task-box">
+                    <div class="task-label">Tasks</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>tasks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-quick-notes">
+                <textarea class="quick-notes"></textarea>
+            </div>
+        </div>
+
+        <div class="day" id="wednesday">
+            <div class="top-text">
+                <div class="day-name">Wednesday</div>
+            </div>
+            <div class="top-divider"></div>
+            <div class="daily">
+                <div class="event-box">
+                    <div class="event-label">Events</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>events</li>
+                    </ul>
+                </div>
+                <div class="middle-divider"></div>
+                <div class="task-box">
+                    <div class="task-label">Tasks</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>tasks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-quick-notes">
+                <textarea class="quick-notes"></textarea>
+            </div>
+        </div>
+
+        <div class="day" id="thursday">
+            <div class="top-text">
+                <div class="day-name">Thursday</div>
+            </div>
+            <div class="top-divider"></div>
+            <div class="daily">
+                <div class="event-box">
+                    <div class="event-label">Events</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>events</li>
+                    </ul>
+                </div>
+                <div class="middle-divider"></div>
+                <div class="task-box">
+                    <div class="task-label">Tasks</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>tasks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-quick-notes">
+                <textarea class="quick-notes"></textarea>
+            </div>
+        </div>
+
+        <div class="day" id="friday">
+            <div class="top-text">
+                <div class="day-name">Friday</div>
+            </div>
+            <div class="top-divider"></div>
+            <div class="daily">
+                <div class="event-box">
+                    <div class="event-label">Events</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>events</li>
+                    </ul>
+                </div>
+                <div class="middle-divider"></div>
+                <div class="task-box">
+                    <div class="task-label">Tasks</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>tasks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-quick-notes">
+                <textarea class="quick-notes"></textarea>
+            </div>
+        </div>
+
+        <div class="day" id="saturday">
+            <div class="top-text">
+                <div class="day-name">Saturday</div>
+            </div>
+            <div class="top-divider"></div>
+            <div class="daily">
+                <div class="event-box">
+                    <div class="event-label">Events</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>events</li>
+                    </ul>
+                </div>
+                <div class="middle-divider"></div>
+                <div class="task-box">
+                    <div class="task-label">Tasks</div>
+                    <ul>
+                        <li>list</li>
+                        <li>of</li>
+                        <li>tasks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-quick-notes">
+                <textarea class="quick-notes"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
