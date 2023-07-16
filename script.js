@@ -1,9 +1,7 @@
-const button = document.querySelector("button");
-function greet() {
-    // prompt(): textbox with popup dialog box and stores input
-    const askName = prompt("What is your name?");
-    // alert(): displays text in popup dialog box
-    alert(`Hello ${askName}, nice to see you!`);
-}
-button.addEventListener("click", greet);
-let variableName = "hey";
+// update today's date
+let dateLabel = document.getElementById("date-label");
+let date = new Date();
+const day= date.getDay()
+let weekday= ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+dateLabel.innerText = "Today is " + weekday[day] + " (" + (date.getMonth() + 1) + "/" + date.getDate() + ")";
+

@@ -165,12 +165,9 @@
     margin-top: 5px;
 }
 
-.event-list {
-    margin-left: 10px;
-}
-
 .task-list {
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 body {
@@ -187,12 +184,6 @@ body {
 .event-box, .task-box {
     flex: 1;
     overflow: scroll;
-    block-size: initial;
-}
-
-.day-date {
-    font-size: 20px;
-    margin-left: 20px;
 }
 
 #notes-label {
