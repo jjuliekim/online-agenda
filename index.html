@@ -4,13 +4,33 @@
     <meta charset="UTF-8">
     <title>Online Weekly Planner</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
 <div id="menu-bar">
-    <menu class="menu-button">File</menu>
-    <menu class="menu-button">Add</menu>
-    <menu class="menu-button">Theme</menu>
+    <div class="dropdown-menu">
+        <button class="menu-button">File</button>
+        <div class="dropdown-content">
+            <a href="#">Save</a>
+            <a href="#">Open</a>
+        </div>
+    </div>
+    <div class="dropdown-menu">
+        <button class="menu-button">Add</button>
+        <div class="dropdown-content">
+            <a href="#">New Event</a>
+            <a href="#">New Task</a>
+        </div>
+    </div>
+    <div class="dropdown-menu">
+        <button class="menu-button">Theme</button>
+        <div class="dropdown-content">
+            <a href="#">Default</a>
+            <a href="#">Light</a>
+            <a href="#">Dark</a>
+        </div>
+    </div>
     <div id="date-label">Today is Sunday 1/1</div>
     <div id="title">Your Weekly Planner</div>
 </div>
@@ -20,7 +40,7 @@
 <div id="main">
     <div class="sidebar">
         <div id="task-title">All Tasks</div>
-        <div class="task-list"></div>
+        <div class="all-task-list"></div>
         <div id="notes-label">Notes</div>
         <textarea class="textbox"></textarea>
         <textarea class="textbox"></textarea>
@@ -39,8 +59,9 @@
                     <div class="event-box">
                         <div class="event-label">Events</div>
                         <ul class="event-list">
-                            <li>listlistlistt listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
-                                listlistlist </li>
+                            <li>
+                                listlistlistlistlilistlist
+                            </li>
                             <li>events</li>
                             <li>events</li>
                             <li>events</li>
@@ -49,11 +70,12 @@
                     <div class="middle-divider"></div>
                     <div class="task-box">
                         <div class="task-label">Tasks</div>
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>tasks</li>
-                        </ul>
+                        <div class="task-list">
+                            <input type="checkbox">listlistlistt
+                            listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
+                            listlistlist <br>
+                            <input type="checkbox"> list list <br>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-divider"></div>
@@ -74,17 +96,20 @@
                     <div class="event-box">
                         <div class="event-label">Events</div>
                         <ul class="event-list">
-                            <li>listlistlistt </li>
+                            <li>events</li>
+                            <li>events</li>
+                            <li>events</li>
                         </ul>
                     </div>
                     <div class="middle-divider"></div>
                     <div class="task-box">
                         <div class="task-label">Tasks</div>
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>tasks</li>
-                        </ul>
+                        <div class="task-list">
+                            <input type="checkbox">listlistlistt
+                            listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
+                            listlistlist <br>
+                            <input type="checkbox"> list list <br>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-divider"></div>
@@ -105,17 +130,20 @@
                     <div class="event-box">
                         <div class="event-label">Events</div>
                         <ul class="event-list">
-                            <li>listlistlistlistlistlistlist</li>
+                            <li>events</li>
+                            <li>events</li>
+                            <li>events</li>
                         </ul>
                     </div>
                     <div class="middle-divider"></div>
                     <div class="task-box">
                         <div class="task-label">Tasks</div>
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>tasks</li>
-                        </ul>
+                        <div class="task-list">
+                            <input type="checkbox">listlistlistt
+                            listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
+                            listlistlist <br>
+                            <input type="checkbox"> list list <br>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-divider"></div>
@@ -136,17 +164,20 @@
                     <div class="event-box">
                         <div class="event-label">Events</div>
                         <ul class="event-list">
-                            <li>listlistlistlistlistlistlist</li>
+                            <li>events</li>
+                            <li>events</li>
+                            <li>events</li>
                         </ul>
                     </div>
                     <div class="middle-divider"></div>
                     <div class="task-box">
                         <div class="task-label">Tasks</div>
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>tasks</li>
-                        </ul>
+                        <div class="task-list">
+                            <input type="checkbox">listlistlistt
+                            listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
+                            listlistlist <br>
+                            <input type="checkbox"> list list <br>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-divider"></div>
@@ -166,17 +197,20 @@
                     <div class="event-box">
                         <div class="event-label">Events</div>
                         <ul class="event-list">
-                            <li>listlistlistlistlistlistlist</li>
+                            <li>events</li>
+                            <li>events</li>
+                            <li>events</li>
                         </ul>
                     </div>
                     <div class="middle-divider"></div>
                     <div class="task-box">
                         <div class="task-label">Tasks</div>
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>tasks</li>
-                        </ul>
+                        <div class="task-list">
+                            <input type="checkbox">listlistlistt
+                            listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
+                            listlistlist <br>
+                            <input type="checkbox"> list list <br>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-divider"></div>
@@ -197,17 +231,20 @@
                     <div class="event-box">
                         <div class="event-label">Events</div>
                         <ul class="event-list">
-                            <li>listlistlistlistlistlistlist</li>
+                            <li>events</li>
+                            <li>events</li>
+                            <li>events</li>
                         </ul>
                     </div>
                     <div class="middle-divider"></div>
                     <div class="task-box">
                         <div class="task-label">Tasks</div>
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>tasks</li>
-                        </ul>
+                        <div class="task-list">
+                            <input type="checkbox">listlistlistt
+                            listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
+                            listlistlist <br>
+                            <input type="checkbox"> list list <br>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-divider"></div>
@@ -228,17 +265,20 @@
                     <div class="event-box">
                         <div class="event-label">Events</div>
                         <ul class="event-list">
-                            <li>listlistlistlistlistlistlist</li>
+                            <li>events</li>
+                            <li>events</li>
+                            <li>events</li>
                         </ul>
                     </div>
                     <div class="middle-divider"></div>
                     <div class="task-box">
                         <div class="task-label">Tasks</div>
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>tasks</li>
-                        </ul>
+                        <div class="task-list">
+                            <input type="checkbox">listlistlistt
+                            listlistlistlistlistlistlislistlistlistlistlistlistlistlistlistlistlistlistlistlistlist
+                            listlistlist <br>
+                            <input type="checkbox"> list list <br>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-divider"></div>
