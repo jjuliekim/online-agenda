@@ -51,6 +51,7 @@
     color: black;
     padding: 8px 14px;
     display: block;
+    text-decoration: none;
 }
 
 .dropdown-content a:hover {
@@ -91,6 +92,7 @@
     background-color: #e9edc9;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .top-divider {
@@ -170,11 +172,6 @@
     margin-top: 10px;
 }
 
-body {
-    margin: 0;
-    font-family: "Times New Roman";
-}
-
 .task-label {
     font-size: 18px;
     margin-left: 5px;
@@ -189,4 +186,17 @@ body {
 #notes-label {
     font-size: 20px;
     margin: 20px;
+}
+
+.clear {
+    background-color: #c1d3b7;
+    border-width: 1px;
+    font-size: 14px;
+    margin-right: 10px;
+    border-color: #649d42;
+}
+
+* {
+    margin: 0;
+    font-family: "Times New Roman";
 }
