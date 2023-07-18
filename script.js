@@ -67,3 +67,22 @@ function newTask() {
     taskSideBar.appendChild(document.createTextNode(` ${description} - ${day}`));
     taskSideBar.appendChild(document.createElement("br"));
 }
+
+// set theme to default
+function defaultTheme() {
+    document.getElementById("menu-bar").style.backgroundColor = "";
+    document.getElementById("date-label").style.color = "";
+    document.getElementById("title").style.color = "";
+}
+
+function lightTheme() {
+    document.getElementById("menu-bar").style.backgroundColor = "white";
+    document.getElementById("date-label").style.color = "";
+    document.getElementById("title").style.color = "";
+}
+
+function darkTheme() {
+    document.getElementById("menu-bar").style.backgroundColor = "black";
+    document.getElementById("date-label").style.color = "lightGrey";
+    document.getElementById("title").style.color = "lightGrey";
+}
