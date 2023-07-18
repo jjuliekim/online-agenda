@@ -28,15 +28,42 @@ function newEvent() {
     while (!regex.exec(time)) {
         time = prompt("Invalid event time! \nEnter valid time:", "Write as: hh:mm AM/PM");
     }
-    const result = regex.exec(time);
-    const hour = result[1];
-    const minute = result[2];
-    const isAM = result[3].toLowerCase() === "am";
 
-    // add the new event to the event list
+    // add the new event to the right day's event list
     let eventList = document.getElementsByClassName("event-list")
         .item(weekday.indexOf(day));
     let event = document.createElement("li");
     event.appendChild(document.createTextNode(`${title} (${description}) - ${time}`));
     eventList.appendChild(event);
+}
+
+// new task
+function newTask() {
+    let description = prompt("Task Description:");
+    while (description.trim() === "") {
+        description = prompt("Invalid task description!\nEnter task description:");
+    }
+    let day = prompt("Day of Event:",
+        "Write as: Sunday, Monday, Tuesday, ...");
+    day = day.charAt(0).toUpperCase() + day.substring(1).toLowerCase();
+    while (!weekday.includes(day.trim())) {
+        day = prompt("Invalid day!\nEnter valid a day of the week:");
+    }
+
+    // add the new task to the right day's task list
+    let taskList = document.getElementsByClassName("task-list")
+        .item(weekday.indexOf(day));
+    let checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    taskList.appendChild(checkBox);
+    taskList.appendChild(document.createTextNode(` ${description}`));
+    taskList.appendChild(document.createElement("br"));
+
+    // add the new task to the task sidebar
+    let taskSideBar = document.getElementById("all-task-list");
+    let checkBoxTwo = document.createElement("input");
+    checkBoxTwo.type = "checkbox";
+    taskSideBar.appendChild(checkBoxTwo);
+    taskSideBar.appendChild(document.createTextNode(` ${description} - ${day}`));
+    taskSideBar.appendChild(document.createElement("br"));
 }

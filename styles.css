@@ -66,11 +66,12 @@
     background-color: #d4a373;
 }
 
-.all-task-list {
+#all-task-list {
     background-color: white;
     width: 300px;
     height: 500px;
     overflow-y: inherit;
+    padding: 10px;
 }
 
 .sidebar {
