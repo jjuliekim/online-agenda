@@ -18,6 +18,7 @@ function newEvent() {
     }
     let day = prompt("Day of Event:",
         "Write as: Sunday, Monday, Tuesday, ...");
+    day = day.charAt(0).toUpperCase() + day.substring(1).toLowerCase();
     while (!weekday.includes(day.trim())) {
         day = prompt("Invalid day!\nEnter valid a day of the week:");
     }
@@ -33,5 +34,9 @@ function newEvent() {
     const isAM = result[3].toLowerCase() === "am";
 
     // add the new event to the event list
-
+    let eventList = document.getElementsByClassName("event-list")
+        .item(weekday.indexOf(day));
+    let event = document.createElement("li");
+    event.appendChild(document.createTextNode(`${title} (${description}) - ${time}`));
+    eventList.appendChild(event);
 }
