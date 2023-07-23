@@ -79,7 +79,16 @@ function defaultTheme() {
     document.getElementById("all-task-list").style.backgroundColor = "";
     for (const element of document.getElementsByClassName("dropdown-content")) {
         element.style.backgroundColor = "";
-        // change css hover property
+    }
+    for (const element of document.getElementsByTagName("a")) {
+        element.style.backgroundColor = "";
+        element.style.color = "";
+        element.onmouseenter = function() {
+            this.style.backgroundColor = "";
+        }
+        element.onmouseleave = function() {
+            this.style.backgroundColor = "";
+        }
     }
     for (const element of document.getElementsByClassName("top-text")) {
         element.style.backgroundColor = "";
@@ -101,6 +110,12 @@ function defaultTheme() {
     for (const element of document.getElementsByClassName("menu-button")) {
         element.style.backgroundColor = "";
         element.style.color = "";
+        element.onmouseenter = function() {
+            this.style.backgroundColor = "";
+        }
+        element.onmouseleave = function() {
+            this.style.backgroundColor = "";
+        }
     }
     for (const element of document.getElementsByClassName("clear")) {
         element.style.backgroundColor = "";
@@ -133,7 +148,16 @@ function lightTheme() {
     document.getElementById("all-task-list").style.backgroundColor = "";
     for (const element of document.getElementsByClassName("dropdown-content")) {
         element.style.backgroundColor = "lightGrey";
-        // change css hover property
+    }
+    for (const element of document.getElementsByTagName("a")) {
+        element.style.backgroundColor = "lightGrey";
+        element.style.color = "";
+        element.onmouseenter = function() {
+            this.style.backgroundColor = "darkGrey";
+        }
+        element.onmouseleave = function() {
+            this.style.backgroundColor = "lightGrey";
+        }
     }
     for (const element of document.getElementsByClassName("top-text")) {
         element.style.backgroundColor = "lightGrey";
@@ -155,6 +179,12 @@ function lightTheme() {
     for (const element of document.getElementsByClassName("menu-button")) {
         element.style.backgroundColor = "lightGrey";
         element.style.color = "";
+        element.onmouseenter = function() {
+            this.style.backgroundColor = "darkGrey";
+        }
+        element.onmouseleave = function() {
+            this.style.backgroundColor = "lightGrey";
+        }
     }
     for (const element of document.getElementsByClassName("textbox")) {
         element.style.backgroundColor = "";
@@ -177,20 +207,29 @@ function darkTheme() {
     document.getElementById("main").style.backgroundColor = "#000000";
     document.getElementById("sidebar").style.backgroundColor = "#2a2a2c";
     document.getElementById("sidebar").style.color = "darkGrey";
-    document.getElementById("all-task-list").style.backgroundColor = "darkGrey";
+    document.getElementById("all-task-list").style.backgroundColor = "#5d5c5c";
     for (const element of document.getElementsByClassName("dropdown-content")) {
-        element.style.backgroundColor = "#4a4a4d";
-        // change css hover property
+        element.style.backgroundColor = "#272626";
+    }
+    for (const element of document.getElementsByTagName("a")) {
+        element.style.backgroundColor = "#272626";
+        element.style.color = "lightGrey";
+        element.onmouseenter = function() {
+            this.style.backgroundColor = "#4a4a4d";
+        }
+        element.onmouseleave = function() {
+            this.style.backgroundColor = "#272626";
+        }
     }
     for (const element of document.getElementsByClassName("top-text")) {
         element.style.backgroundColor = "#2a2a2c";
         element.style.color = "darkGrey";
     }
     for (const element of document.getElementsByClassName("top-divider")) {
-        element.style.backgroundColor = "lightGrey";
+        element.style.backgroundColor = "black";
     }
     for (const element of document.getElementsByClassName("middle-divider")){
-        element.style.backgroundColor = "lightGrey";
+        element.style.backgroundColor = "black";
     }
     for (const element of document.getElementsByClassName("bg-quick-notes")) {
         element.style.backgroundColor = "#272626";
@@ -202,12 +241,18 @@ function darkTheme() {
     for (const element of document.getElementsByClassName("menu-button")) {
         element.style.backgroundColor = "black";
         element.style.color = "lightGrey";
+        element.onmouseenter = function() {
+            this.style.backgroundColor = "#272626";
+        }
+        element.onmouseleave = function() {
+            this.style.backgroundColor = "black";
+        }
     }
     for (const element of document.getElementsByClassName("textbox")) {
-        element.style.backgroundColor = "darkGrey";
+        element.style.backgroundColor = "#5d5c5c";
     }
     for (const element of document.getElementsByClassName("quick-notes")) {
-        element.style.backgroundColor = "darkGrey";
+        element.style.backgroundColor = "#5d5c5c";
     }
     for (const element of document.getElementsByClassName("event-box")) {
         element.style.backgroundColor = "darkGrey";
