@@ -73,16 +73,173 @@ function defaultTheme() {
     document.getElementById("menu-bar").style.backgroundColor = "";
     document.getElementById("date-label").style.color = "";
     document.getElementById("title").style.color = "";
+    document.getElementById("main").style.backgroundColor = "";
+    document.getElementById("sidebar").style.color = "";
+    document.getElementById("sidebar").style.backgroundColor = "";
+    document.getElementById("all-task-list").style.backgroundColor = "";
+    for (const element of document.getElementsByClassName("dropdown-content")) {
+        element.style.backgroundColor = "";
+        // change css hover property
+    }
+    for (const element of document.getElementsByClassName("top-text")) {
+        element.style.backgroundColor = "";
+        element.style.color = "";
+    }
+    for (const element of document.getElementsByClassName("top-divider")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("middle-divider")){
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("bg-quick-notes")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("clear")) {
+        element.style.backgroundColor = "";
+        element.style.borderColor = "";
+    }
+    for (const element of document.getElementsByClassName("menu-button")) {
+        element.style.backgroundColor = "";
+        element.style.color = "";
+    }
+    for (const element of document.getElementsByClassName("clear")) {
+        element.style.backgroundColor = "";
+        element.style.borderColor = "";
+    }
+    for (const element of document.getElementsByClassName("menu-button")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("textbox")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("quick-notes")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("event-box")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("task-box")) {
+        element.style.backgroundColor = "";
+    }
 }
 
 function lightTheme() {
     document.getElementById("menu-bar").style.backgroundColor = "white";
     document.getElementById("date-label").style.color = "";
     document.getElementById("title").style.color = "";
+    document.getElementById("main").style.backgroundColor = "#b2b2b2";
+    document.getElementById("sidebar").style.color = "";
+    document.getElementById("sidebar").style.backgroundColor = "#e5e2e2";
+    document.getElementById("all-task-list").style.backgroundColor = "";
+    for (const element of document.getElementsByClassName("dropdown-content")) {
+        element.style.backgroundColor = "lightGrey";
+        // change css hover property
+    }
+    for (const element of document.getElementsByClassName("top-text")) {
+        element.style.backgroundColor = "lightGrey";
+        element.style.color = "";
+    }
+    for (const element of document.getElementsByClassName("top-divider")) {
+        element.style.backgroundColor = "black";
+    }
+    for (const element of document.getElementsByClassName("middle-divider")){
+        element.style.backgroundColor = "black";
+    }
+    for (const element of document.getElementsByClassName("bg-quick-notes")) {
+        element.style.backgroundColor = "#8e8c8c";
+    }
+    for (const element of document.getElementsByClassName("clear")) {
+        element.style.backgroundColor = "white";
+        element.style.borderColor = "black";
+    }
+    for (const element of document.getElementsByClassName("menu-button")) {
+        element.style.backgroundColor = "lightGrey";
+        element.style.color = "";
+    }
+    for (const element of document.getElementsByClassName("textbox")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("quick-notes")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("event-box")) {
+        element.style.backgroundColor = "";
+    }
+    for (const element of document.getElementsByClassName("task-box")) {
+        element.style.backgroundColor = "";
+    }
 }
 
 function darkTheme() {
-    document.getElementById("menu-bar").style.backgroundColor = "black";
+    document.getElementById("menu-bar").style.backgroundColor = "#47474f";
     document.getElementById("date-label").style.color = "lightGrey";
     document.getElementById("title").style.color = "lightGrey";
+    document.getElementById("main").style.backgroundColor = "#000000";
+    document.getElementById("sidebar").style.backgroundColor = "#2a2a2c";
+    document.getElementById("sidebar").style.color = "darkGrey";
+    document.getElementById("all-task-list").style.backgroundColor = "darkGrey";
+    for (const element of document.getElementsByClassName("dropdown-content")) {
+        element.style.backgroundColor = "#4a4a4d";
+        // change css hover property
+    }
+    for (const element of document.getElementsByClassName("top-text")) {
+        element.style.backgroundColor = "#2a2a2c";
+        element.style.color = "darkGrey";
+    }
+    for (const element of document.getElementsByClassName("top-divider")) {
+        element.style.backgroundColor = "lightGrey";
+    }
+    for (const element of document.getElementsByClassName("middle-divider")){
+        element.style.backgroundColor = "lightGrey";
+    }
+    for (const element of document.getElementsByClassName("bg-quick-notes")) {
+        element.style.backgroundColor = "#272626";
+    }
+    for (const element of document.getElementsByClassName("clear")) {
+        element.style.backgroundColor = "#9b9a9a";
+        element.style.borderColor = "black";
+    }
+    for (const element of document.getElementsByClassName("menu-button")) {
+        element.style.backgroundColor = "black";
+        element.style.color = "lightGrey";
+    }
+    for (const element of document.getElementsByClassName("textbox")) {
+        element.style.backgroundColor = "darkGrey";
+    }
+    for (const element of document.getElementsByClassName("quick-notes")) {
+        element.style.backgroundColor = "darkGrey";
+    }
+    for (const element of document.getElementsByClassName("event-box")) {
+        element.style.backgroundColor = "darkGrey";
+    }
+    for (const element of document.getElementsByClassName("task-box")) {
+        element.style.backgroundColor = "darkGrey";
+    }
+}
+
+// set on click event for each clear button
+let clearElementsI = 0;
+for (const element of document.getElementsByClassName("clear")) {
+    element.onclick = () => { clearDayContent(clearElementsI) };
+    clearElementsI++;
+}
+
+// clears the content for the right day of the week
+function clearDayContent(dayI) {
+    let eventList = document.getElementsByClassName("event-list");
+    let taskList = document.getElementsByClassName("task-list");
+    for (let child of eventList.item(dayI)) {
+        eventList.removeChild(child);
+    }
+    for (let child of taskList.item(dayI)) {
+        taskList.removeChild(child);
+    }
+}
+
+// clears everything
+function newPlanner() {
+    defaultTheme();
+    for (let i = 0; i < 6; i++) {
+        clearDayContent(i);
+    }
 }
