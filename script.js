@@ -2,9 +2,10 @@
 const dateLabel = document.getElementById("date-label");
 let date = new Date();
 const day = date.getDay()
-const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-dateLabel.innerText = "Today is " + weekday[day] + " (" + (date.getMonth() + 1) + "/" + date.getDate() + ")";
-
+const weekday = ['Sunday', 'Monday', 'Tuesday',
+    'Wednesday', 'Thursday', 'Friday', 'Saturday']
+dateLabel.innerText = "Today is " + weekday[day] +
+    " (" + (date.getMonth() + 1) + "/" + date.getDate() + ")";
 
 // new event
 function newEvent() {
@@ -26,7 +27,8 @@ function newEvent() {
     if (time == null) return;
     const regex = /^([1-9]|[01][0-2]):(\d|[0-5]\d) (AM|PM)$/i;
     while (!regex.exec(time)) {
-        time = prompt("Invalid event time! \nEnter valid time:", "Write as: hh:mm AM/PM");
+        time = prompt("Invalid event time! \nEnter valid time:",
+            "Write as: hh:mm AM/PM");
     }
 
     // add the new event to the right day's event list
@@ -38,6 +40,7 @@ function newEvent() {
 }
 
 // new task
+let numCompleted = 0;
 function newTask() {
     let description = prompt("Task Description:");
     while (description.trim() === "") {
@@ -48,6 +51,7 @@ function newTask() {
     day = day.charAt(0).toUpperCase() + day.substring(1).toLowerCase();
     while (!weekday.includes(day.trim())) {
         day = prompt("Invalid day!\nEnter valid a day of the week:");
+        day = day.charAt(0).toUpperCase() + day.substring(1).toLowerCase();
     }
 
     // add the new task to the right day's task list
@@ -55,16 +59,37 @@ function newTask() {
         .item(weekday.indexOf(day));
     let checkBox = document.createElement("input");
     checkBox.type = "checkbox";
+    let desc = document.createTextNode(` ${description}`)
+    checkBox.appendChild(desc);
+    checkBox.onclick = () => {
+        if (checkBox.checked) {
+            numCompleted++;
+        } else {
+            numCompleted--;
+        }
+        document.getElementById("num-completed").textContent = numCompleted.toString();
+    };
     taskList.appendChild(checkBox);
-    taskList.appendChild(document.createTextNode(` ${description}`));
+    taskList.appendChild(desc);
     taskList.appendChild(document.createElement("br"));
 
     // add the new task to the task sidebar
     let taskSideBar = document.getElementById("all-task-list");
     let checkBoxTwo = document.createElement("input");
     checkBoxTwo.type = "checkbox";
+    let text = document.createTextNode(` ${description} - ${day}`);
+    checkBoxTwo.appendChild(text);
+    // update number of tasks completed
+    checkBoxTwo.onclick = () => {
+        if (checkBoxTwo.checked) {
+            numCompleted++;
+        } else {
+            numCompleted--;
+        }
+        document.getElementById("num-completed").textContent = numCompleted.toString();
+    };
     taskSideBar.appendChild(checkBoxTwo);
-    taskSideBar.appendChild(document.createTextNode(` ${description} - ${day}`));
+    taskSideBar.appendChild(text);
     taskSideBar.appendChild(document.createElement("br"));
 }
 
@@ -81,14 +106,7 @@ function defaultTheme() {
         element.style.backgroundColor = "";
     }
     for (const element of document.getElementsByTagName("a")) {
-        element.style.backgroundColor = "";
-        element.style.color = "";
-        element.onmouseenter = function() {
-            this.style.backgroundColor = "";
-        }
-        element.onmouseleave = function() {
-            this.style.backgroundColor = "";
-        }
+        defaultBg(element);
     }
     for (const element of document.getElementsByClassName("top-text")) {
         element.style.backgroundColor = "";
@@ -108,14 +126,7 @@ function defaultTheme() {
         element.style.borderColor = "";
     }
     for (const element of document.getElementsByClassName("menu-button")) {
-        element.style.backgroundColor = "";
-        element.style.color = "";
-        element.onmouseenter = function() {
-            this.style.backgroundColor = "";
-        }
-        element.onmouseleave = function() {
-            this.style.backgroundColor = "";
-        }
+        defaultBg(element);
     }
     for (const element of document.getElementsByClassName("clear")) {
         element.style.backgroundColor = "";
@@ -124,17 +135,17 @@ function defaultTheme() {
     for (const element of document.getElementsByClassName("menu-button")) {
         element.style.backgroundColor = "";
     }
-    for (const element of document.getElementsByClassName("textbox")) {
-        element.style.backgroundColor = "";
+    defaultElements();
+}
+
+function defaultBg(element) {
+    element.style.backgroundColor = "";
+    element.style.color = "";
+    element.onmouseenter = function() {
+        this.style.backgroundColor = "";
     }
-    for (const element of document.getElementsByClassName("quick-notes")) {
-        element.style.backgroundColor = "";
-    }
-    for (const element of document.getElementsByClassName("event-box")) {
-        element.style.backgroundColor = "";
-    }
-    for (const element of document.getElementsByClassName("task-box")) {
-        element.style.backgroundColor = "";
+    element.onmouseleave = function() {
+        this.style.backgroundColor = "";
     }
 }
 
@@ -150,14 +161,7 @@ function lightTheme() {
         element.style.backgroundColor = "lightGrey";
     }
     for (const element of document.getElementsByTagName("a")) {
-        element.style.backgroundColor = "lightGrey";
-        element.style.color = "";
-        element.onmouseenter = function() {
-            this.style.backgroundColor = "darkGrey";
-        }
-        element.onmouseleave = function() {
-            this.style.backgroundColor = "lightGrey";
-        }
+        menuColors(element);
     }
     for (const element of document.getElementsByClassName("top-text")) {
         element.style.backgroundColor = "lightGrey";
@@ -177,15 +181,23 @@ function lightTheme() {
         element.style.borderColor = "black";
     }
     for (const element of document.getElementsByClassName("menu-button")) {
-        element.style.backgroundColor = "lightGrey";
-        element.style.color = "";
-        element.onmouseenter = function() {
-            this.style.backgroundColor = "darkGrey";
-        }
-        element.onmouseleave = function() {
-            this.style.backgroundColor = "lightGrey";
-        }
+        menuColors(element);
     }
+    defaultElements();
+}
+
+function menuColors(element) {
+    element.style.backgroundColor = "lightGrey";
+    element.style.color = "";
+    element.onmouseenter = function() {
+        this.style.backgroundColor = "darkGrey";
+    }
+    element.onmouseleave = function() {
+        this.style.backgroundColor = "lightGrey";
+    }
+}
+
+function defaultElements() {
     for (const element of document.getElementsByClassName("textbox")) {
         element.style.backgroundColor = "";
     }
@@ -271,19 +283,24 @@ for (const element of document.getElementsByClassName("clear")) {
 
 // clears the content for the right day of the week
 function clearDayContent(dayI) {
-    let eventList = document.getElementsByClassName("event-list");
-    let taskList = document.getElementsByClassName("task-list");
-    for (let child of eventList.item(dayI)) {
-        eventList.removeChild(child);
-    }
-    for (let child of taskList.item(dayI)) {
-        taskList.removeChild(child);
-    }
+    let eventList = document.getElementsByClassName("event-list").item(dayI);
+    let taskList = document.getElementsByClassName("task-list").item(dayI);
+    console.log("cleared");
+    eventList.innerHTML = "";
+    taskList.innerHTML = "";
 }
 
-// clears everything
+// clears everything and sets back to default
 function newPlanner() {
     defaultTheme();
+    let quickNotes = document.getElementsByClassName("quick-notes");
+    for (let notes of quickNotes) {
+        notes.value = "";
+    }
+    let textboxes = document.getElementsByClassName("textbox");
+    for (let textbox of textboxes) {
+        textbox.value = "";
+    }
     for (let i = 0; i < 6; i++) {
         clearDayContent(i);
     }

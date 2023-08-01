@@ -192,6 +192,18 @@
     border-color: #649d42;
 }
 
+#tasks-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#completed {
+    display: flex;
+    flex-direction: row;
+}
+
 * {
     margin: 0;
     font-family: "Times New Roman";
