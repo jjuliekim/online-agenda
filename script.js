@@ -61,14 +61,15 @@ function newTask() {
     checkBox.type = "checkbox";
     let desc = document.createTextNode(` ${description}`)
     checkBox.appendChild(desc);
-    checkBox.onclick = () => {
+    // don't want dupes
+    /*checkBox.onclick = () => {
         if (checkBox.checked) {
             numCompleted++;
         } else {
             numCompleted--;
         }
         document.getElementById("num-completed").textContent = numCompleted.toString();
-    };
+    };*/
     taskList.appendChild(checkBox);
     taskList.appendChild(desc);
     taskList.appendChild(document.createElement("br"));
